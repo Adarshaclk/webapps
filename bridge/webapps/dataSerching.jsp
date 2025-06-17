@@ -31,12 +31,11 @@
             font-weight: bold;
         }
         .btn-center {
-            margin: 30px auto;
+            margin:j 30px auto;
         }
     </style>
 </head>
 <body>
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="#">Bridge Report</a>
@@ -55,16 +54,13 @@
         </div>
     </div>
 </nav>
-
-<div class="container mt-4">
-    <img src="https://drupal-prod.visitcalifornia.com/sites/default/files/styles/opengraph_1200x630/public/VCW_D_Bigsur_T3_Hero_Central%20Coast_Hero_BixbyBridgeBIg%20Sur_VCL_CC_BigSur_BixbyBridge_.jpgFarnum%20copy-1280x642.jpg.webp?itok=ov_HJOUi" class="banner-image img-fluid" alt="Bridge 1">
-    <h1 class="text-center main-heading">All India Bridge Inspection Committee</h1>
-    <div class="text-center">
-        <a class="btn btn-lg btn-outline-primary btn-center" href="form.jsp" role="button">Go to Form</a>
-         <a class="btn btn-lg btn-outline-primary btn-center" href="dataSerching.jsp" role="button">bridge data </a>
-    </div>
-</div>
-
+<form action="report" method="doget">
+<div class="mb-3">
+  <label for="bridgeId" class="form-label">Bridge ID</label>
+   <input type="number" class="form-control" id="findId" placeholder="Enter the bridge ID "   name="id" required>
+   </div>
+ <button type="submit" class="btn btn-primary">Submit Report</button>
+ </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

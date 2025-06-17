@@ -11,7 +11,7 @@ public class BridgeDto {
 
     private String name;
     private String location;
-    private String length;
+    private int length;
     private String date;
     private String sent;
     private String isSafeParam;

@@ -3,12 +3,15 @@ package com.project.bridge.service;
 import com.project.bridge.dto.BridgeDto;
 import com.project.bridge.repository.BridgeRepository;
 import com.project.bridge.repository.BridgeRepositoryImpli;
+import sun.plugin.services.BrowserService;
+
+import java.util.Optional;
 
 public class ServiceImpli implements BridgeServiceInter{
     @Override
     public boolean save(BridgeDto bridgeDto) {
         if (bridgeDto != null) {
-            if(bridgeDto.getName()==null){
+            if(bridgeDto.getName()==null && bridgeDto.getName().length()<3){
                 System.out.println("enterd the invalied name");
                 return false;
             }
@@ -28,7 +31,8 @@ public class ServiceImpli implements BridgeServiceInter{
                 return false;
             }
             System.out.println("valied");
-            if (bridgeDto.getLength() == null) {
+            int lnth=bridgeDto.getLength();
+            if (lnth==0 && lnth<=5) {
                 System.out.println("enterd the invalied length");
                 return false;
             }
@@ -43,6 +47,14 @@ public class ServiceImpli implements BridgeServiceInter{
         BridgeRepository bridgeRepository=new BridgeRepositoryImpli();
         bridgeRepository.parser(bridgeDto);
         return true;
-
     }
+public Optional<BridgeDto> findId(int id){
+        if(id>0){
+            BridgeRepositoryImpli bridgeRepositoryImpli=new BridgeRepositoryImpli();
+            return bridgeRepositoryImpli.findId(id);
+        }
+        return BridgeServiceInter.super.findId(id);
+}
+
+
 }
