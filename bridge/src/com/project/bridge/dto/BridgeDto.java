@@ -2,10 +2,10 @@ package com.project.bridge.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Data
 @AllArgsConstructor
 public class BridgeDto {
 
@@ -16,4 +16,11 @@ public class BridgeDto {
     private String sent;
     private String isSafeParam;
 
+
+    public BridgeDto(int ind, String name, String loc, LocalDate date, int length, String sent, String check, LocalDateTime time) {
+    }
+
+    public BridgeDto() {
+
+    }
 }

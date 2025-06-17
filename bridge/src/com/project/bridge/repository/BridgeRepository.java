@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface BridgeRepository {
     boolean parser(BridgeDto bridgeDto);
-default public Optional<BridgeDto> findId(int id){
+default Optional<BridgeDto> findId(int id){
     return Optional.empty();
 }
 }

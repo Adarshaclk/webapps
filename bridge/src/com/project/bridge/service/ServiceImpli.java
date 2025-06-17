@@ -48,8 +48,9 @@ public class ServiceImpli implements BridgeServiceInter{
         bridgeRepository.parser(bridgeDto);
         return true;
     }
-public Optional<BridgeDto> findId(int id){
+        public Optional<BridgeDto> findId(int id){
         if(id>0){
+            System.out.println("the id is : "+id);
             BridgeRepositoryImpli bridgeRepositoryImpli=new BridgeRepositoryImpli();
             return bridgeRepositoryImpli.findId(id);
         }
